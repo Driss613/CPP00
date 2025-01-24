@@ -6,7 +6,7 @@
 #    By: drabarza <drabarza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/15 08:08:17 by drabarza          #+#    #+#              #
-#    Updated: 2025/01/13 16:11:43 by drabarza         ###   ########.fr        #
+#    Updated: 2025/01/24 16:46:37 by drabarza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ RED = \033[3;31m
 NC = \033[0m
 
 NAME = megaphone
-CCP = c++
+CPP = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
 SRC =	megaphone.cpp
 OBJ = $(SRC:.cpp=.o)
@@ -27,20 +27,20 @@ MAKEFLAGS += -s
 all: header $(NAME)
 
 $(NAME) : $(OBJ)
-	@${CCP} ${FLAGS} $(OBJ) -o $@
+	@${CPP} ${FLAGS} $(OBJ) -o $@
 
 header:
 	@clear
-	@echo "${GREEN} ██████╗ ██████╗  ██████╗"
-	@echo "██╔════╝██╔═████╗██╔═████╗"
-	@echo "██║     ██║██╔██║██║██╔██║"
-	@echo "██║     ████╔╝██║████╔╝██║"
-	@echo "╚██████╗╚██████╔╝╚██████╔╝"
-	@echo " ╚═════╝ ╚═════╝  ╚═════╝"
+	@echo "${GREEN} ██████╗██████╗ ██████╗  ██████╗  ██████╗"
+	@echo "██╔════╝██╔══██╗██╔══██╗██╔═████╗██╔═████╗"
+	@echo "██║     ██████╔╝██████╔╝██║██╔██║██║██╔██║"
+	@echo "██║     ██╔═══╝ ██╔═══╝ ████╔╝██║████╔╝██║"
+	@echo "╚██████╗██║     ██║     ╚██████╔╝╚██████╔╝"
+	@echo " ╚═════╝╚═╝     ╚═╝      ╚═════╝  ╚═════╝"
 	@echo "Compilation in progress...${NC}"
 
 %.o : %.cpp
-	@${CCP} ${FLAGS} -c $< -o $@
+	@${CPP} ${FLAGS} -c $< -o $@
 	@echo "${CURRENT_DATE} ${GREENS}[CMD]${NC}${GREEN} - $(basename $<)${NC}"
 
 clean:

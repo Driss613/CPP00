@@ -6,34 +6,26 @@
 /*   By: drabarza <drabarza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 14:57:18 by drabarza          #+#    #+#             */
-/*   Updated: 2024/12/20 14:30:58 by drabarza         ###   ########.fr       */
+/*   Updated: 2025/01/24 13:56:03 by drabarza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
 
 int	main (int argc, char **argv)
 {
-	int j;
-	int	i;
-
 	if (argc == 1)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	for (int j = 1; j < argc; j++)
 	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
-	}
-	j = 1;
-	while (j < argc)
-	{
-		i = 0;
-		while(argv[j][i])
+		for (int i = 0; argv[j][i]; i++)
 		{
-			if (islower(argv[j][i]))
-				argv[j][i] -= 32;
-			std::cout << argv[j][i];
-			i++;
+			if (std::isalpha(argv[j][i]))
+				std::cout << (char)(std::toupper(argv[j][i]));
+			else
+				std::cout << argv[j][i];
 		}
-		j++;
 	}
 	std::cout << std::endl;
 	return (0);
