@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drabarza <drabarza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 15:37:11 by drabarza          #+#    #+#             */
-/*   Updated: 2025/01/24 18:26:20 by drabarza         ###   ########.fr       */
+/*   Updated: 2025/01/25 14:10:24 by drabarza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
-Phonebook::Phonebook()
+PhoneBook::PhoneBook()
 {
 	_index = 0;
 }
 
-Phonebook::~Phonebook()
+PhoneBook::~PhoneBook()
 {
 }
 
-void Phonebook::help() const
+void PhoneBook::help() const
 {
 	std::cout << "╔═══════════════════════════════════════════════════════════════╗" << std::endl;
 	std::cout << "║                                                               ║" << std::endl;
@@ -34,7 +34,7 @@ void Phonebook::help() const
 	std::cout << "║                                                               ║" << std::endl;
 	std::cout << "╚═══════════════════════════════════════════════════════════════╝" << std::endl;
 }
-void Phonebook::add()
+void PhoneBook::add()
 {
 	std::string	first_name;
 	std::string	last_name;
@@ -44,28 +44,28 @@ void Phonebook::add()
 
 	std::cout << "Enter your first name ";
 	std::getline(std::cin, first_name);
-	if (first_name.empty() || std::cin.eof())
+	if (std::cin.eof() || first_name.empty())
 	{
 		std::cout << std::endl << "Error: First name cannot be empty" << std::endl;
 		return ;
 	}
 	std::cout << std::endl << "Enter your last name ";
 	std::getline(std::cin, last_name);
-	if (last_name.empty() || std::cin.eof())
+	if (std::cin.eof() || last_name.empty())
 	{
 		std::cout << std::endl << "Error: Last name cannot be empty" << std::endl;
 		return ;
 	}
 	std::cout << std::endl << "Enter your nickname ";
 	std::getline(std::cin, nickname);
-	if (nickname.empty() || std::cin.eof())
+	if (std::cin.eof() || nickname.empty())
 	{
 		std::cout << std::endl << "Error: Nickname cannot be empty" << std::endl;
 		return ;
 	}
 	std::cout << std::endl << "Enter your phone number ";
 	std::getline(std::cin, phone_number);
-	if (phone_number.empty() || std::cin.eof())
+	if (std::cin.eof() || phone_number.empty())
 	{
 		std::cout << std::endl << "Error: Phone number cannot be empty" << std::endl;
 		return ;
@@ -80,7 +80,7 @@ void Phonebook::add()
 	}
 	std::cout << std::endl << "Enter your darkest secret ";
 	std::getline(std::cin, darkest_secret);
-	if (darkest_secret.empty() || std::cin.eof())
+	if (std::cin.eof() || darkest_secret.empty())
 	{
 		std::cout << std::endl << "Error: Darkest secret cannot be empty" << std::endl;
 		return ;
@@ -95,7 +95,7 @@ void Phonebook::add()
 		_index = 0;
 }
 
-void	Phonebook::print_contact() const
+void	PhoneBook::print_contact() const
 {
 	std::string	index_str;
 	int			index_int;
@@ -110,12 +110,12 @@ void	Phonebook::print_contact() const
 	index_int = atoi(index_str.c_str()) - 1;
 	if (index_int < 0 || index_int > 7)
 	{
-		std::cout << "Invalid index !" << std::endl;
+		std::cout << std::endl << "Invalid index !" << std::endl;
 		return ;
 	}
 	if (contact[index_int].get_first_name().empty())
 	{
-		std::cout << "Line empty !" << std::endl;
+		std::cout << std::endl << "Line empty !" << std::endl;
 		return ;
 	}
 	std::cout << "First name: " << contact[index_int].get_first_name() << std::endl;
@@ -125,7 +125,7 @@ void	Phonebook::print_contact() const
 	std::cout << "Darkest secret: " << contact[index_int].get_darkest_secret() << std::endl;
 }
 
-void	Phonebook::print_contacts_header() const
+void	PhoneBook::print_contacts_header() const
 {
 	std::cout << "╔═════════════════════════════════════════╗" << std::endl;
 	std::cout << "║                                         ║" << std::endl;
@@ -139,7 +139,7 @@ void	Phonebook::print_contacts_header() const
 	std::cout << std::string(44, '-') << "\n";
 }
 
-void	Phonebook::print_contacts() const
+void	PhoneBook::print_contacts() const
 {
 	for (int i = 0; i < 8; i++)
 	{
@@ -150,9 +150,9 @@ void	Phonebook::print_contacts() const
 	}
 }
 
-const std::string	Phonebook::print_column(const std::string& str) const
+const std::string	PhoneBook::print_column(const std::string& str) const
 {
-	if (str.length() > 9)
+	if (str.length() > 10)
 		return str.substr(0, 9) + '.';
 	return std::string(10 - str.length(), ' ') + str;
 }

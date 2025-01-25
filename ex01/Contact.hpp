@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drabarza <drabarza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/25 10:26:53 by drabarza          #+#    #+#             */
-/*   Updated: 2025/01/25 10:26:54 by drabarza         ###   ########.fr       */
+/*   Created: 2025/01/25 15:09:32 by drabarza          #+#    #+#             */
+/*   Updated: 2025/01/25 15:18:25 by drabarza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
-#include <iostream>
+#include <string>
 
 class Contact
 {

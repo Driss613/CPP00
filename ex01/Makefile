@@ -6,7 +6,7 @@
 #    By: drabarza <drabarza@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/15 08:08:17 by drabarza          #+#    #+#              #
-#    Updated: 2025/01/24 16:45:48 by drabarza         ###   ########.fr        #
+#    Updated: 2025/01/25 15:17:13 by drabarza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ NC = \033[0m
 NAME = phonebook
 CPP = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-SRC =	phonebook.cpp \
-		contact.cpp \
+SRC =	PhoneBook.cpp \
+		Contact.cpp \
 		main.cpp
 OBJ = $(SRC:.cpp=.o)
 CURRENT_DATE = $(shell date +"%d/%m/%Y %H:%M:%S")
