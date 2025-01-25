@@ -6,7 +6,7 @@
 /*   By: drabarza <drabarza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 15:37:11 by drabarza          #+#    #+#             */
-/*   Updated: 2025/01/24 16:02:20 by drabarza         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:26:20 by drabarza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Phonebook::~Phonebook()
 {
 }
 
-void Phonebook::help()
+void Phonebook::help() const
 {
 	std::cout << "╔═══════════════════════════════════════════════════════════════╗" << std::endl;
 	std::cout << "║                                                               ║" << std::endl;
@@ -95,7 +95,7 @@ void Phonebook::add()
 		_index = 0;
 }
 
-void	Phonebook::print_contact()
+void	Phonebook::print_contact() const
 {
 	std::string	index_str;
 	int			index_int;
@@ -125,7 +125,7 @@ void	Phonebook::print_contact()
 	std::cout << "Darkest secret: " << contact[index_int].get_darkest_secret() << std::endl;
 }
 
-void	Phonebook::print_contacts_header()
+void	Phonebook::print_contacts_header() const
 {
 	std::cout << "╔═════════════════════════════════════════╗" << std::endl;
 	std::cout << "║                                         ║" << std::endl;
@@ -139,7 +139,7 @@ void	Phonebook::print_contacts_header()
 	std::cout << std::string(44, '-') << "\n";
 }
 
-void	Phonebook::print_contacts()
+void	Phonebook::print_contacts() const
 {
 	for (int i = 0; i < 8; i++)
 	{
@@ -150,7 +150,7 @@ void	Phonebook::print_contacts()
 	}
 }
 
-std::string	Phonebook::print_column(std::string str)
+const std::string	Phonebook::print_column(const std::string& str) const
 {
 	if (str.length() > 9)
 		return str.substr(0, 9) + '.';

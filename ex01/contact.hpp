@@ -14,16 +14,16 @@ class Contact
 	public :
 		Contact(void);
 		~Contact(void);
-		std::string	get_first_name() const;
-		std::string	get_last_name() const;
-		std::string	get_nickname() const;
-		std::string	get_phone_number() const;
-		std::string	get_darkest_secret() const;
-		void	set_first_name(std::string new_first_name);
-		void	set_last_name(std::string new_last_name);
-		void	set_nickname(std::string new_nickname);
-		void	set_phone_number(std::string new_phone_number);
-		void	set_darkest_secret(std::string new_darkest_secret);
+		const std::string&	get_first_name() const;
+		const std::string&	get_last_name() const;
+		const std::string&	get_nickname() const;
+		const std::string&	get_phone_number() const;
+		const std::string&	get_darkest_secret() const;
+		void	set_first_name(const std::string& new_first_name);
+		void	set_last_name(const std::string& new_last_name);
+		void	set_nickname(const std::string& new_nickname);
+		void	set_phone_number(const std::string& new_phone_number);
+		void	set_darkest_secret(const std::string& new_darkest_secret);
 
 };
 #endif
